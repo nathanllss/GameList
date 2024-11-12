@@ -3,6 +3,7 @@ package com.nathan.study.gamelist.services;
 import com.nathan.study.gamelist.dto.GameDTO;
 import com.nathan.study.gamelist.dto.GameMinDTO;
 import com.nathan.study.gamelist.entities.Game;
+import com.nathan.study.gamelist.projections.GameMinProjection;
 import com.nathan.study.gamelist.repositories.GameRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,9 @@ public class GameService {
 
     public List<GameMinDTO> findAll() {
         return gameRepository.findAll().stream().map(GameMinDTO::new).collect(Collectors.toList());
+    }
+
+    public List<GameMinDTO> findByList(Long listId) {
+        return gameRepository.searchByList(listId).stream().map(GameMinDTO::new).collect(Collectors.toList());
     }
 }
