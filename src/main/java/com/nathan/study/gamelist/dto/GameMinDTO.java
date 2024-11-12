@@ -1,7 +1,6 @@
 package com.nathan.study.gamelist.dto;
 
 import com.nathan.study.gamelist.entities.Game;
-import jakarta.persistence.Column;
 
 public class GameMinDTO {
     private Long id;

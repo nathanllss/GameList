@@ -23,6 +23,7 @@ public class GameService {
         Game result = gameRepository.findById(id).get();
         return new GameDTO(result);
     }
+
     public List<GameMinDTO> findAll() {
         return gameRepository.findAll().stream().map(GameMinDTO::new).collect(Collectors.toList());
     }
